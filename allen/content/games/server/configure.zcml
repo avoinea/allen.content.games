@@ -1,0 +1,37 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  i18n_domain="allen">
+
+  <class class=".Server">
+    <require
+      interface="..interfaces.IGamesServer"
+      permission="zope.View" />
+    <require
+      set_schema="..interfaces.IGamesServer"
+      permission="zope.ManageContent" />
+  </class>
+
+  <browser:addMenuItem
+    title="Allen Games Server"
+    description="Games server"
+    class=".Server"
+    for="zope.interface.Interface"
+    permission="zope.ManageContent" />
+
+  <browser:page
+    name="edit.html"
+    menu="zmi_views"
+    title="Edit"
+    for="..interfaces.IGamesServer"
+    permission="zope.ManageServices"
+    class=".browser.Edit"
+    />
+
+  <browser:icon
+    name="zmi_icon"
+    for="..interfaces.IGamesServer"
+    file="icon.png"
+  />
+
+</configure>
