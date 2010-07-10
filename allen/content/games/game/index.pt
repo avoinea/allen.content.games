@@ -1,0 +1,28 @@
+<metal:block use-macro="context/@@standard_macros/page" i18n:domain="stiam">
+  <metal:head fill-slot="head">
+    <link rel="image_src"
+     tal:define="thumbnail python:view.thumbnail()"
+     tal:condition="thumbnail"
+     tal:attributes="href thumbnail" />
+  </metal:head>
+  <div metal:fill-slot="body" class="game-body" tal:define="
+    swf string:${context/@@absolute_url}/@@index.swf">
+    <div style="padding: 2em; text-align: center">
+      <object codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0"
+      tal:attributes="
+        width python:context.width;
+        height python:context.height">
+        <param name="movie" tal:attributes="value swf">
+        <param name="quality" value="high">
+        <embed
+          pluginspace="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"
+          type="application/x-shockwave-flash"
+          tal:attributes="
+            src swf;
+            width python:context.width;
+            height python:context.height"></embed>
+      </object>
+      <h2 tal:content="string:${context/title} - ${context/description}"/>
+    </div>
+  </div>
+</metal:block>

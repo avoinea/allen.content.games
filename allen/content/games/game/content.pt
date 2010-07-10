@@ -1,0 +1,19 @@
+<div style="width: 150px; height: 150px; overflow: hidden">
+  <div style="text-align: center">
+    <a tal:define="icon python:view.thumbnail(size='album');"
+      tal:condition="icon" tal:attributes="
+        href context/@@absolute_url;
+        title python:context.title;">
+      <img tal:attributes="
+        src string:$icon/@@scale/album;
+        title python:context.title;
+        alt python:context.title;" />
+    </a>
+  </div>
+  <div style="text-align: center">
+    <a tal:content="python:context.title"
+    tal:attributes="
+      href context/@@absolute_url;
+      title python:context.title;" />
+  </div>
+</div>

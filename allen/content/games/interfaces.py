@@ -1,9 +1,19 @@
 from zope import schema
 from allen.content.core.interfaces import IContent
+from allen.content.section.interfaces import ISection
 
 class IGamesContent(IContent):
     """ Games related content
     """
+
+class IGamesSection(IGamesContent, ISection):
+    """ Games section
+    """
+    title = schema.TextLine(title=u'Title', required=True)
+    description = schema.Text(title=u'Description', required=False)
+    order = schema.Int(title=u'Order in container', default=10)
+    tags = schema.List(title=u'Tags', value_type=schema.TextLine())
+    max_items = schema.Int(title=u'Max items', default=15)
 
 class IGamesPage(IGamesContent):
     """ Collection of games
@@ -37,3 +47,5 @@ class IGame(IGamesContent):
     url = schema.TextLine(title=u'URL', required=False)
     updated = schema.Datetime(title=u'Effective date')
     tags = schema.List(title=u'Tags', value_type=schema.TextLine())
+    width = schema.Int(title=u"Width", default=550)
+    height = schema.Int(title=u'Height', default=550)

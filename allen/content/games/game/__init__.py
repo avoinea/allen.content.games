@@ -14,3 +14,5 @@ class Game(Content):
     url = ''
     updated = None
     tags = ()
+    width = 550
+    height = 550

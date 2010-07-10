@@ -25,6 +25,8 @@ setup(name='allen.content.games',
       install_requires=[
           'setuptools',
           # -*- Extra requirements: -*-
+          'allen.content.core',
+          'allen.content.section',
       ],
       entry_points="""
       # -*- Entry points: -*-

@@ -8,5 +8,6 @@
   <include package=".server" />
   <include package=".category" />
   <include package=".game" />
+  <include package=".section" />
 
 </configure>
