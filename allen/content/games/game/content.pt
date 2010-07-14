@@ -1,4 +1,4 @@
-<div style="width: 150px; height: 150px; overflow: hidden">
+<div class="game-thumbnail">
   <div style="text-align: center">
     <a tal:define="icon python:view.thumbnail(size='album');"
       tal:condition="icon" tal:attributes="

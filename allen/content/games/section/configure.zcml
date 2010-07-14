@@ -24,8 +24,19 @@
     menu="zmi_views"
     title="Edit"
     for="..interfaces.IGamesSection"
-    permission="zope.ManageServices"
+    permission="zope.ManageContent"
     class=".browser.Edit"
+    />
+
+  <browser:page
+    name="index.html"
+    menu="zmi_views"
+    title="View"
+    for="..interfaces.IGamesSection"
+    template="index.pt"
+    layer="zope.interface.Interface"
+    permission="zope.View"
+    class=".browser.View"
     />
 
   <browser:icon

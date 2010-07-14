@@ -10,4 +10,7 @@
   <include package=".game" />
   <include package=".section" />
 
+  <include package=".catalog" />
+  <include package=".setup" />
+
 </configure>

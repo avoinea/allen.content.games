@@ -1,0 +1,5 @@
+<tal:newsitems define="items python:view.items">
+  <tal:items repeat="item items">
+    <tal:item replace="structure item/@@content.html" />
+  </tal:items>
+</tal:newsitems>

@@ -28,6 +28,24 @@
     class=".browser.Edit"
     />
 
+  <browser:page
+    name="content.html"
+    for="..interfaces.IGamesPage"
+    permission="zope.View"
+    class=".browser.Content"
+    layer="zope.interface.Interface"
+    template="content.pt"
+    />
+
+  <browser:page
+    name="index.html"
+    for="..interfaces.IGamesPage"
+    permission="zope.View"
+    class=".browser.View"
+    layer="zope.interface.Interface"
+    template="index.pt"
+    />
+
   <browser:icon
     name="zmi_icon"
     for="..interfaces.IGamesPage"

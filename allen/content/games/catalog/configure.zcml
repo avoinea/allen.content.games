@@ -1,0 +1,24 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+  i18n_domain="stiamro">
+
+  <adapter
+    for="..interfaces.IGame"
+    name="game.indexer"
+    factory=".indexer.ItemIndexer" />
+
+  <subscriber
+    for="..interfaces.IGame zope.app.container.interfaces.IObjectAddedEvent"
+    handler=".events.game_on_add"
+   />
+
+  <subscriber
+    for="..interfaces.IGame zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+    handler=".events.game_on_change"
+   />
+
+  <subscriber
+    for="..interfaces.IGame zope.app.container.interfaces.IObjectRemovedEvent"
+    handler=".events.game_on_delete"
+   />
+
+</configure>
