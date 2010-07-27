@@ -32,13 +32,6 @@ class IGamesServer(IGamesContent):
     description = schema.Text(title=u'Description', required=False)
     url = schema.TextLine(title=u'URL')
 
-class IGamesCategory(IGamesContent):
-    """ Games container
-    """
-    title = schema.TextLine(title=u'Title')
-    description = schema.Text(title=u'Description', required=False)
-    url = schema.TextLine(title=u'URL', required=False)
-
 class IGame(IGamesContent):
     """ Game object
     """
