@@ -1,4 +1,6 @@
-<configure xmlns="http://namespaces.zope.org/zope"
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
   i18n_domain="stiamro">
 
   <adapter
@@ -20,5 +22,10 @@
     for="..interfaces.IGame zope.app.container.interfaces.IObjectRemovedEvent"
     handler=".events.game_on_delete"
    />
+
+  <browser:page name="reindex.html" class=".reindex.Reindex"
+    for="..interfaces.IGamesSection"
+    layer="zope.interface.Interface"
+    permission="zope.ManageContent" />
 
 </configure>
