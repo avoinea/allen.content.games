@@ -1,6 +1,8 @@
 <metal:block use-macro="context/@@standard_macros/page"
   i18n:domain="allen">
   <div metal:fill-slot="body" class="games-body" id="games-body">
+    <h1 class="page-title" tal:define="title python:context.title or ''"
+      tal:content="title" tal:condition="title" />
     <tal:newsitems replace="structure context/@@content.html" />
   </div>
 </metal:block>
